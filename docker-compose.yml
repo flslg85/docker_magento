@@ -11,9 +11,12 @@ services:
       - redis
     links:
       - mysql
+      - redis
 
   redis:
     image: redis
+    ports:
+      - '6379:6379'
 
   mysql:
     build: ./mysql
